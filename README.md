@@ -3,18 +3,47 @@
  includes user profiles and a search feature with pagination.
 
 ## Features
-### 1- Product Management: 
-   - Display products with images, descriptions, and pricing
-   - Organize products into categories and apply tags for easy navigation
-   - Implement a search functionality for users to find products quickly
-   - Allow customers to leave reviews and ratings for products
-   ### 2- Shopping Cart:
-   - Enable users to add products to their shopping cart.
-   - View and modify the contents of the shopping cart.
-   - Provide a seamless checkout process with multiple payment options.
-  ### 3- User Accounts:
-   - Allow users to create accounts and log in securely.
-   - Display past orders and order details for logged-in users.
+
+### Product Listing
+- **Browse Products:** View a wide range of products with detailed descriptions, prices, and images.
+- **Product Categories:** Filter products by categories for easier navigation.
+- **Product Details:** Access comprehensive details for each product, including specifications and customer reviews.
+
+### User Authentication
+- **Sign Up:** Create a new account using an email address and password.
+- **Login:** Securely log in to your account.
+- **Password Reset:** Reset your password via email if forgotten.
+
+### Order Management
+- **Order Placement:** Easily place orders for products added to the cart.
+- **Order History:** View past orders, including order details and statuses.
+- **Order Tracking:** Track the status and delivery of active orders.
+
+### Shopping Cart
+- **Add to Cart:** Add products to your shopping cart.
+- **Cart Management:** Update product quantities or remove items from the cart.
+- **Checkout:** Proceed to payment and finalize purchases.
+
+### Product Reviews
+- **Write Reviews:** Share your feedback and rate products.
+- **View Reviews:** Read reviews from other customers.
+- **Moderation:** Ensure reviews meet community guidelines before they are published.
+
+### Stripe Payment Integration
+- **Secure Payments:** Process payments securely using Stripe.
+- **Multiple Payment Methods:** Support for various payment methods, including credit cards and digital wallets.
+- **Payment Confirmation:** Receive confirmation of successful payments.
+
+### User Profiles
+- **Profile Management:** Update personal information, such as name, email, and password.
+- **Address Book:** Manage shipping and billing addresses.
+- **Wishlist:** Save products to a wishlist for future reference.
+
+### Search with Pagination
+- **Search Functionality:** Quickly find products using the search bar.
+- **Pagination:** Efficiently navigate through search results with pagination.
+- **Filters and Sorting:** Apply filters and sorting options to refine search results.
+
 
 ## How to Install
 1. **Clone the repository:**
