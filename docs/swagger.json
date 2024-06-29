@@ -1,0 +1,1513 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Ecommerce API",
+    "description": "Ecommerce API",
+    "contact": {
+      "name": "Taha Shabaan",
+      "email": "tahashabaan48@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "schemas": ["http", "https"],
+  "servers": [
+    {
+      "url": "{url}/api/{apiVersion}",
+      "variables": {
+        "url": {
+          "default": "http://localhost:3000",
+          "enum": [
+            "http://localhost:3000",
+            "https://ecommerece-api.onrender.com/"
+          ]
+        },
+        "apiVersion": {
+          "default": "v1"
+        }
+      }
+    }
+  ],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/products": {
+      "get": {
+        "tags": ["Products"],
+        "summary": "Get all products",
+        "description": "Get all products",
+        "operationId": "getProducts",
+        "respones": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Product"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new product",
+        "description": "Create a new product",
+        "operationId": "createProduct",
+        "tags": ["Products"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Product"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Product"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "summary": "Get a product by id",
+        "description": "Get a product by id",
+        "operationId": "getProductById",
+        "tags": ["Product"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Product id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Product"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a product by id",
+        "description": "Update a product by id",
+        "operationId": "updateProductById",
+        "tags": ["update Product"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Product id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Product"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Product"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "delete": {
+        "summary": "Delete a product by id",
+        "description": "Delete a product by id",
+        "operationId": "deleteProductById",
+        "tags": ["delete Product"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Product id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Product"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "tags": ["Categories"],
+        "summary": "Get all categories",
+        "description": "Get all categories",
+        "operationId": "getCategories",
+        "respones": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Category"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/{id}": {
+      "get": {
+        "summary": "Get a category by id",
+        "description": "Get a category by id",
+        "operationId": "getCategoryById",
+        "tags": ["Category"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Category id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Category"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a category by id",
+        "description": "Update a category by id",
+        "operationId": "updateCategoryById",
+        "tags": ["update Category"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Category id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Category"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Category"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "delete": {
+        "summary": "Delete a category by id",
+        "description": "Delete a category by id",
+        "operationId": "deleteCategoryById",
+        "tags": ["delete Category"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Category id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Category"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subcategories": {
+      "get": {
+        "tags": ["SubCategories"],
+        "summary": "Get all subcategories",
+        "description": "Get all subcategories",
+        "operationId": "getSubCategories",
+        "respones": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/SubCategory"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subcategories/{id}": {
+      "get": {
+        "summary": "Get a subcategory by id",
+        "description": "Get a subcategory by id",
+        "operationId": "getSubCategoryById",
+        "tags": ["SubCategory"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "SubCategory id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/SubCategory"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a subcategory by id",
+        "description": "Update a subcategory by id",
+        "operationId": "updateSubCategoryById",
+        "tags": ["update SubCategory"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "SubCategory id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/SubCategory"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/SubCategory"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "delete": {
+        "summary": "Delete a subcategory by id",
+        "description": "Delete a subcategory by id",
+        "operationId": "deleteSubCategoryById",
+        "tags": ["delete SubCategory"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "SubCategory id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/SubCategory"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/brands": {
+      "get": {
+        "tags": ["Brands"],
+        "summary": "Get all brands",
+        "description": "Get all brands",
+        "operationId": "getBrands",
+        "respones": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Brand"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/brands/{id}": {
+      "get": {
+        "summary": "Get a brand by id",
+        "description": "Get a brand by id",
+        "operationId": "getBrandById",
+        "tags": ["Brand"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Brand id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Brand"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a brand by id",
+        "description": "Update a brand by id",
+        "operationId": "updateBrandById",
+        "tags": ["update Brand"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Brand id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Brand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Brand"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "delete": {
+        "summary": "Delete a brand by id",
+        "description": "Delete a brand by id",
+        "operationId": "deleteBrandById",
+        "tags": ["delete Brand"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Brand id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Brand"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get all users",
+        "description": "Get all users",
+        "operationId": "getUsers",
+        "respones": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/User"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new user",
+        "description": "Create a new user",
+        "operationId": "createUser",
+        "tags": ["Users"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "summary": "Get a user by id",
+        "description": "Get a user by id",
+        "operationId": "getUserById",
+        "tags": ["User"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/User"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a user by id",
+        "description": "Update a user by id",
+        "operationId": "updateUserById",
+        "tags": ["update User"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/User"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "delete": {
+        "summary": "Delete a user by id",
+        "description": "Delete a user by id",
+        "operationId": "deleteUserById",
+        "tags": ["delete User"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/reviews": {
+      "get": {
+        "tags": ["Reviews"],
+        "summary": "Get all reviews",
+        "description": "Get all reviews",
+        "operationId": "getReviews",
+        "respones": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Review"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new review",
+        "description": "Create a new review",
+        "operationId": "createReview",
+        "tags": ["Reviews"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Review"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Review"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/reviews/{id}": {
+      "get": {
+        "summary": "Get a review by id",
+        "description": "Get a review by id",
+        "operationId": "getReviewById",
+        "tags": ["Review"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Review id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Review"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a review by id",
+        "description": "Update a review by id",
+        "operationId": "updateReviewById",
+        "tags": ["update Review"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Review id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Review"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Review"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "delete": {
+        "summary": "Delete a review by id",
+        "description": "Delete a review by id",
+        "operationId": "deleteReviewById",
+        "tags": ["delete Review"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Review id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Review"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/orders": {
+      "get": {
+        "tags": ["Orders"],
+        "summary": "Get all orders",
+        "description": "Get all orders",
+        "operationId": "getOrders",
+        "respones": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Order"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new order",
+        "description": "Create a new order",
+        "operationId": "createOrder",
+        "tags": ["Orders"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Order"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/orders/{id}": {
+      "get": {
+        "summary": "Get a order by id",
+        "description": "Get a order by id",
+        "operationId": "getOrderById",
+        "tags": ["Order"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Order id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Order"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a order by id",
+        "description": "Update a order by id",
+        "operationId": "updateOrderById",
+        "tags": ["update Order"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Order id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Order"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Order"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "delete": {
+        "summary": "Delete a order by id",
+        "description": "Delete a order by id",
+        "operationId": "deleteOrderById",
+        "tags": ["delete Order"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Order id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Order"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/carts": {
+      "get": {
+        "tags": ["Carts"],
+        "summary": "Get all carts",
+        "description": "Get all carts",
+        "operationId": "getCarts",
+        "respones": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Cart"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new cart",
+        "description": "Create a new cart",
+        "operationId": "createCart",
+        "tags": ["Carts"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Cart"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Cart"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/carts/{id}": {
+      "get": {
+        "summary": "Get a cart by id",
+        "description": "Get a cart by id",
+        "operationId": "getCartById",
+        "tags": ["Cart"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Cart id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Cart"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a cart by id",
+        "description": "Update a cart by id",
+        "operationId": "updateCartById",
+        "tags": ["update Cart"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Cart id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Cart"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Cart"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "delete": {
+        "summary": "Delete a cart by id",
+        "description": "Delete a cart by id",
+        "operationId": "deleteCartById",
+        "tags": ["delete Cart"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Cart id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Cart"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/wishlist": {
+      "get": {
+        "tags": ["Wishlist"],
+        "summary": "Get all wishlist",
+        "description": "Get all wishlist",
+        "operationId": "getWishlist",
+        "respones": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Wishlist"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new wishlist",
+        "description": "Create a new wishlist",
+        "operationId": "createWishlist",
+        "tags": ["Wishlist"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Wishlist"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definations/Wishlist"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/wishlist/{id}": {
+      "get": {
+        "summary": "Get a wishlist by id",
+        "description": "Get a wishlist by id",
+        "operationId": "getWishlistById",
+        "tags": ["Wishlist"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Wishlist id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Wishlist"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a wishlist by id",
+        "description": "Update a wishlist by id",
+        "operationId": "updateWishlistById",
+        "tags": ["update Wishlist"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Wishlist id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definations/Wishlist"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Wishlist"
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "delete": {
+        "summary": "Delete a wishlist by id",
+        "description": "Delete a wishlist by id",
+        "operationId": "deleteWishlistById",
+        "tags": ["delete Wishlist"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Wishlist id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "$ref": "#/definations/Wishlist"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definations": {
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Product id"
+          },
+          "name": {
+            "type": "string",
+            "description": "Product name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Product description"
+          },
+          "price": {
+            "type": "number",
+            "description": "Product price"
+          },
+          "image": {
+            "type": "string",
+            "description": "Product image"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Product created date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Product updated date"
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Category id"
+          },
+          "name": {
+            "type": "string",
+            "description": "Category name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Category description"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Category created date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Category updated date"
+          }
+        }
+      },
+      "SubCategory": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "SubCategory id"
+          },
+          "name": {
+            "type": "string",
+            "description": "SubCategory name"
+          },
+          "description": {
+            "type": "string",
+            "description": "SubCategory description"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "SubCategory created date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "SubCategory updated date"
+          }
+        }
+      },
+      "Brand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Brand id"
+          },
+          "name": {
+            "type": "string",
+            "description": "Brand name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Brand description"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Brand created date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Brand updated date"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "User id"
+          },
+          "name": {
+            "type": "string",
+            "description": "User name"
+          },
+          "email": {
+            "type": "string",
+            "description": "User email"
+          },
+          "password": {
+            "type": "string",
+            "description": "User password"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "User created date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "User updated date"
+          }
+        }
+      },
+      "Review": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Review id"
+          },
+          "userId": {
+            "type": "string",
+            "description": "User id"
+          },
+          "productId": {
+            "type": "string",
+            "description": "Product id"
+          },
+          "review": {
+            "type": "string",
+            "description": "Review"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Review created date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Review updated date"
+          }
+        }
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Order id"
+          },
+          "userId": {
+            "type": "string",
+            "description": "User id"
+          },
+          "productId": {
+            "type": "string",
+            "description": "Product id"
+          },
+          "quantity": {
+            "type": "number",
+            "description": "Product quantity"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Order created date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Order updated date"
+          }
+        }
+      },
+      "Cart": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Cart id"
+          },
+          "userId": {
+            "type": "string",
+            "description": "User id"
+          },
+          "productId": {
+            "type": "string",
+            "description": "Product id"
+          },
+          "quantity": {
+            "type": "number",
+            "description": "Product quantity"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Cart created date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Cart updated date"
+          }
+        }
+      },
+      "Wishlist": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Wishlist id"
+          },
+          "userId": {
+            "type": "string",
+            "description": "User id"
+          },
+          "productId": {
+            "type": "string",
+            "description": "Product id"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "Wishlist created date"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "Wishlist updated date"
+          }
+        }
+      }
+    }
+  }
+}
