@@ -1,5 +1,6 @@
-# ecommerce-wep-app
-   Ecommerce wep API  i using node js to control services and routes and mongodb to store database
+# E-commerce Application
+ This e-commerce application allows customers to browse products, authenticate, manage orders, use a cart, leave reviews, and process payments with Stripe. It also 
+ includes user profiles and a search feature with pagination.
 
 ## Features
 ### 1- Product Management: 
@@ -15,48 +16,50 @@
    - Allow users to create accounts and log in securely.
    - Display past orders and order details for logged-in users.
 
-##  How to Install and Run the Project
-  to install it project using it command `npm install` to install all dependencies.
-    - ```bcryptjs
-       body
-       parser
-       colors
-       compression
-       cors
-       dotenv
-       express
-       express-async-handler
-       express-validator
-       jsonwebtoken
-       mongoose
-       morgan
-       multer
-       nodemailer
-       nodemon
-       sharp
-       slugify
-       supertest
-      swagger-
-      ui-express```
-- to run you need configuration file called `config.env` includes 
- ```PORT
- NODE_ENV
- BASE_URL_ENV
- SECRET_JWT_CODE
- DB_USER
- DB_PASSWORD
- DB_URI
-JWT_SECRET_KEY
-JWT_EXPIRE_TIME
-HOST
-PORT_GMAIL
-SERVICE
-USER
-PASS
-STRIPE_WEBHOOK_SECRET
-```
-## How to Use the Project
-  you can run ptoject using it command `npm run dev` and  you can show Api docs  using  it route `/api/docs`
+## How to Install
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/tahashabaan/ecommerce-backend.git
+    ```
+2. **Navigate to the project directory:**
+    ```bash
+    cd ecommerce-backend
+    ```
+3. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4. **Set up environment variables:**
+    Create a `.env` file in the root directory and add your configuration settings.
+    
+    ```plaintext
+       PORT
+       NODE_ENV
+       BASE_URL_ENV
+       SECRET_JWT_CODE
+       DB_USER
+       DB_PASSWORD
+       DB_URI
+       JWT_SECRET_KEY
+       JWT_EXPIRE_TIME
+       HOST
+       PORT_GMAIL
+       SERVICE
+       USER
+       PASS
+       STRIPE_WEBHOOK_SECRET
+    ```
+5. **Run the application:**
+    ```bash
+    npm start
+    ```
+
+Provide step-by-step instructions on how to install and set up your application.
+
+---
+
+Feel free to adjust the instructions based on the specific details and requirements of your project. Let me know if there's anything else you need!
+
 
 
 
